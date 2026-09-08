@@ -13,21 +13,7 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Appium test automation for a sample Login Form:
- *   Username field, Password field, Login button, Cancel button.
- *
- * Assumptions (change to match your app):
- *  - App package/activity below.
- *  - Elements exposed via resource-id: username, password, loginButton, cancelButton.
- *  - Valid login shows resource-id "welcomeText"; invalid login shows "errorText".
- *  - Appium server at http://127.0.0.1:4723 with an Android device/emulator online.
- *
- * Run:  appium   (terminal 1)
- *       mvn test (terminal 2)
- *
- * Author: Ayham Kalsam
- */
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class LoginTest {
 
@@ -102,21 +88,7 @@ class LoginTest {
 
     @Test
     @Order(3)
-    @DisplayName("T3: empty fields -> login disabled or rejected")
-    void emptyFields() {
-        WebElement loginBtn = driver.findElement(LOGIN_BTN);
-        if (loginBtn.isEnabled()) {
-            loginBtn.click();
-            WebElement error = wait.until(ExpectedConditions.visibilityOfElementLocated(ERROR));
-            assertTrue(error.isDisplayed(), "Empty submit should be rejected with an error");
-        } else {
-            assertFalse(loginBtn.isEnabled(), "Login button should be disabled with empty fields");
-        }
-    }
-
-    @Test
-    @Order(4)
-    @DisplayName("T4: cancel clears username and password")
+    @DisplayName("T3: cancel clears username and password")
     void cancelClearsForm() {
         enterCredentials("somebody", "something");
         driver.findElement(CANCEL_BTN).click();

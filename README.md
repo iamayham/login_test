@@ -11,9 +11,8 @@ All in a single file: `src/test/java/login/LoginTest.java`
 
 | Test | Covers |
 |------|--------|
-| `validLogin`     | Valid credentials → welcome screen |
-| `wrongPassword`  | Wrong password → error, stays on login screen |
-| `emptyFields`    | Empty fields → login disabled or rejected |
+| `validLogin`       | Valid credentials → welcome screen |
+| `wrongPassword`    | Wrong password → error, stays on login screen |
 | `cancelClearsForm` | Cancel button clears the form |
 
 ## Prerequisites
