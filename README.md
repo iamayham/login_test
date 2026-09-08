@@ -7,7 +7,7 @@ using **Java + JUnit 5 + Appium (UiAutomator2)**.
 
 ## Tests
 
-All in a single file: `src/test/java/login/LoginTest.java`
+All in a single file: `LoginTest.java` (repo root)
 
 | Test | Covers |
 |------|--------|

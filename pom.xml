@@ -13,6 +13,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- java-client 9.3.0 references classes newer Selenium removed;
+                 pin every Selenium artifact to the version it was built against -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-bom</artifactId>
+                <version>4.23.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>io.appium</groupId>
@@ -28,6 +42,8 @@
     </dependencies>
 
     <build>
+        <!-- test file lives at the repo root, not src/test/java -->
+        <testSourceDirectory>${project.basedir}</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
